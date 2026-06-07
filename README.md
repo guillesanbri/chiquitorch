@@ -12,7 +12,7 @@ compile(model, inputs, output_dir="generated/")
 
 `compile` will:
 
-```
+```python
 def compile(model, inputs, output_dir="generated/"):
     # export an FX graph
     exported = torch.export.export(model, inputs)
