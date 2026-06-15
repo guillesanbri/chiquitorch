@@ -1,5 +1,11 @@
 # Scratchpad
 
+- `torch.fx.Graph` -> Ordered list of nodes describing dataflow. No weights, can't be run by itself. E.g. `ep.graph`.
+- `torch.fx.GraphModule` -> `nn.Module` subclass, pairs a Graph with the parameters and buffer tensors.
+- `torch.export.ExportedProgram` -> Bundle of `.graph_module` (in lifted form), `.graph` (shortcut for `.graph_module.graph`), `.graph_signature`, `state_dict`, etc.
+
+> Lifted form means that every parameter and buffer of the module is turned into an explicit input placeholder at the front of the argument list. It's the difference between `ep.module()` and `ep.graph_module` (with the latter one the lifted version).
+
 ## Phases
 
 1.- Desktop PC, Python (we are here)

@@ -40,6 +40,12 @@ def compile(model, inputs, output_dir="generated/"):
 - [ ] Operation fusion
 - [ ] Quantization
 
+### Testing
+
+- [ ] Write small model zoo: basic ops, mlp, conv block, residual connection, mha
+- [ ] Write harness abstraction (`assert_close` for now) with HIL testing in mind. Decide between random inputs and pre-computed results.
+- [ ] Write a dummy interpreter to validate the testing pipeline.
+
 ### Docs
 
 - [ ] Explain codegen vs. interpreter/dispatcher
@@ -49,3 +55,8 @@ def compile(model, inputs, output_dir="generated/"):
 - [ ] Multi-device parallelism
 - [ ] Read about loop tiling, weight compression, subgraph scheduling, layout optimization
 - [ ] Interpreter/dispatcher + inference engine version
+
+## References
+
+- [torch.fx](https://docs.pytorch.org/docs/2.12/fx.html)
+- [torch.export](https://docs.pytorch.org/docs/2.12/user_guide/torch_compiler/export.html)
